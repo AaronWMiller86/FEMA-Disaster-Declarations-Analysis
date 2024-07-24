@@ -90,7 +90,7 @@ def df_to_sql():
 def api_status_check():
 # If/else statment that checks to make sure the api call is functioning correctly and returns an error if not.
     if metadata_call.status_code == 200:
-        print("Performing API Calls on " + row_count + " rows of FEMA data and creating the SQL Database.")
+        print("Performing API Calls on " + str(row_count) + " rows of FEMA data and creating the SQL Database.")
         # Calls the function to start the API call and SQL conversion.
         df_to_sql()
     else:
