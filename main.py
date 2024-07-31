@@ -67,9 +67,7 @@ def clean_fema_df():
 
 # Function that loads StateCensusData.csv as a dataframe
 def state_pop_df():
-    df = pd.read_table('StateCensusData.csv', delimiter=',')
-    # Converts the datatype from string to int for the population columns using .astype()
-    df.astype({'1960': int, '1970': int, '1980': int, '1990': int, '2000': int, '2010': int, '2020': int})
+    df = pd.read_table('StateCensusData.csv', delimiter=',', thousands=',')
     return df
 
 # Function that loads county_codes.txt as a dataframe, drops unneeded columns, and renames the remaining columns
@@ -78,7 +76,6 @@ def county_list_df():
     df = pd.read_table('county_codes.txt', delimiter='|')
     df.drop(df.columns[[3,5,6]], axis=1, inplace=True)
     df.columns = new_columns
-    df.astype({'State Code': int, 'County Code': int})
     return df
 
 # Function to convert the dataframes to an SQL database using the sqlalchemy python library
@@ -93,7 +90,7 @@ def df_to_sql():
 def api_status_check():
 # If/else statment that checks to make sure the api call is functioning correctly and returns an error if not.
     if metadata_call.status_code == 200:
-        print("Performing API Calls on " + str(row_count) + " rows of FEMA data and creating the SQL Database.")
+        print("Performing API Calls on " + str(row_count) + " rows of FEMA data and creating a SQL Database.")
         # Calls the function to start the API call and SQL conversion.
         df_to_sql()
     else:
