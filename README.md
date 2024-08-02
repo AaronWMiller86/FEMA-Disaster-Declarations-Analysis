@@ -8,13 +8,13 @@ This project utilizes the openFEMA dataset provided by fema.gov to analyse disas
 Venv (for Python 3) allows you to manage separate package installations for different projects. It creates a “virtual” isolated Python installation. When you switch projects, you can create a new virtual environment which is isolated from other virtual environments. You benefit from the virtual environment since packages can be installed confidently and will not interfere with another project’s environment.
 
 To create a virtual environment, go to your project’s directory and run the following command. This will create a new virtual environment in a local folder named `.venv`:
-Windows: `py -m venv .venv`.<br\>
+Windows: `py -m venv .venv`.<br />
 MacOS/Unix: `python3 -m venv .venv`.
 The second argument is the location to create the virtual environment. Generally, you can just create this in your project and call it .venv.
 
 ### Virtual Environment Activation:
 Activating a virtual environment will put the virtual environment-specific `python` and `pip` executables into your shell’s `PATH`.
-Windows: `.venv\Scripts\activate`.<br\>
+Windows: `.venv\Scripts\activate`.<br />
 MacOS/Unix: `source .venv/bin/activate`.
 
 ### Deactivate a virtual environment:
@@ -24,7 +24,7 @@ If you want to switch projects or leave your virtual environment, deactivate the
 When your virtual environment is activated, you can install packages. Use the `pip install` command to install packages.
 
 ### Installing dependecies in requirments.txt:
-Windows: `py -m pip install -r requirements.txt`<br\>
+Windows: `py -m pip install -r requirements.txt`<br />
 MacOS/Unix: `python3 -m pip install -r requirements.txt`
 
 
