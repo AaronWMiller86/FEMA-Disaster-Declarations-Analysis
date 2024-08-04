@@ -8,14 +8,14 @@ This project utilizes the openFEMA dataset provided by fema.gov to analyse disas
 Venv (for Python 3) allows you to manage separate package installations for different projects. It creates a “virtual” isolated Python installation. When you switch projects, you can create a new virtual environment which is isolated from other virtual environments. You benefit from the virtual environment since packages can be installed confidently and will not interfere with another project’s environment.
 
 To create a virtual environment, go to your project’s directory and run the following command. This will create a new virtual environment in a local folder named `.venv`:<br />
-&ensp;Windows: `py -m venv .venv`.<br />
-&ensp;MacOS/Unix: `python3 -m venv .venv`.<br />
+&emsp;Windows: `python -m venv .venv`.<br />
+&emsp;MacOS/Unix: `python3 -m venv .venv`.<br />
 The second argument is the location to create the virtual environment. Generally, you can just create this in your project and call it .venv.
 
 ### Virtual Environment Activation:
 Activating a virtual environment will put the virtual environment-specific `python` and `pip` executables into your shell’s `PATH`.<br />
-&ensp;Windows: `.venv\Scripts\activate`.<br />
-&ensp;MacOS/Unix: `source .venv/bin/activate`.
+&emsp;Windows: `venv\Scripts\activate`.<br />
+&emsp;MacOS/Unix: `source .venv/bin/activate`.
 
 ### Deactivate a virtual environment:
 If you want to switch projects or leave your virtual environment, deactivate the environment: `deactivate`.
@@ -24,15 +24,15 @@ If you want to switch projects or leave your virtual environment, deactivate the
 When your virtual environment is activated, you can install packages. Use the `pip install` command to install packages.
 
 ### Installing dependecies in requirments.txt:<br />
-&ensp;Windows: `py -m pip install -r requirements.txt`<br />
-&ensp;MacOS/Unix: `python3 -m pip install -r requirements.txt`
+&emsp;Windows: `python -m pip install -r requirements.txt`<br />
+&emsp;MacOS/Unix: `python3 -m pip install -r requirements.txt`
 
 ## How to Run:
 ### Step 1:
+Running the script is simple once all of the dependencies have been installed. Simply run the python file `main.py` and the script will call the `DisasterDeclarationsSummaries` API from fema.gov. The script also pulls data from `county_codes.txt` and `StateCensusData.csv`. It then combines all three into a SQLite database using `pandas` dataframes and `SQLAlchemy`.
 
 ### Step 2:
-
-### Step 3:
+The SQLite database is updated in the file `database.db`. This file can be opened in SQLite or any other SQL program that supports the .db file type.
 
 ## Visualizations:
 ### Visualizations Link:
