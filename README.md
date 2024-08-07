@@ -38,24 +38,31 @@ The SQLite database is updated in the file `database.db`. This file can be opene
 
 ### Loading Data:
 > Read TWO data files (JSON, CSV, Excel, etc.).
+
 My project reads an API call (JSON), a .csv, and a .txt file.
+
 > Set up a local database and read data in with SQLite or SQLAlchemy.
+
 My project uses SQLAlchemy to create a local database.
 
 ### Clean and operate on the data while combining them:
 > If you’re using text data, get some information from your separate documents and summarize them in a DataFrame.
+
 My project merges an API call and a .csv using Pandas DataFrames then prints a summary.
 
 ### Visualize / Present your data:
 > Make a Tableau dashboard to display your data.
+
 My project utilizes Tableau to create a dashboard with visualizations. The link is included below in the Visualizations section.
 
 ### Best practices: Enhance your project to a higher tier that will impress employers and help other programmers understand your project: 
 > Utilize a virtual environment and include instructions in your README on how the user should set one up.
+
 My project includes a venv (virtual enviornment) with the instructions on how to create and activate the venv above in the setup section.
 
 ### Interpretation of your data:
 > Annotate your .py files with well-written comments and a clear README.md (only applicable if you’re not using a jupyter notebook).
+
 My project has clear comments in my `main.py` as well as this `README.md`.
 
 ## Visualizations:
