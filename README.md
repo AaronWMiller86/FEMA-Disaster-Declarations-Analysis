@@ -34,16 +34,47 @@ Running the script is simple once all of the dependencies have been installed. S
 ### Step 2:
 The SQLite database is updated in the file `database.db`. This file can be opened in SQLite or any other SQL program that supports the .db file type.
 
+## Features List:
+
+### Loading Data:
+> Read TWO data files (JSON, CSV, Excel, etc.).
+My project reads an API call (JSON), a .csv, and a .txt file.
+> Set up a local database and read data in with SQLite or SQLAlchemy.
+My project uses SQLAlchemy to create a local database.
+
+### Clean and operate on the data while combining them:
+> If you’re using text data, get some information from your separate documents and summarize them in a DataFrame.
+My project merges an API call and a .csv using Pandas DataFrames then prints a summary.
+
+### Visualize / Present your data:
+> Make a Tableau dashboard to display your data.
+My project utilizes Tableau to create a dashboard with visualizations. The link is included below in the Visualizations section.
+
+### Best practices: Enhance your project to a higher tier that will impress employers and help other programmers understand your project: 
+> Utilize a virtual environment and include instructions in your README on how the user should set one up.
+My project includes a venv (virtual enviornment) with the instructions on how to create and activate the venv above in the setup section.
+
+### Interpretation of your data:
+> Annotate your .py files with well-written comments and a clear README.md (only applicable if you’re not using a jupyter notebook).
+My project has clear comments in my `main.py` as well as this `README.md`.
+
 ## Visualizations:
+
 ### Visualizations Link:
 Visualizations Workbook: (https://us-east-1.online.tableau.com/#/site/aaronwmiller863e8871a59c/views/FemaDataWorkbook/Story1?:iid=3)
 
 ### Example Visualisations:<br /><br />
+This visualization shows the total number of unique disaster declarations per state:<br />
 ![Sheet 1](Images/Sheet1.png)<br /><br />
+This visualization shows the total number of unique disaster declarations per incident type:<br />
 ![Sheet 3](Images/Sheet3.png)<br /><br />
+This visualization shows the total number of unique disaster declarations per year over time: <br />
 ![Sheet 5](Images/Sheet5.png)<br /><br />
+This visualization shows the top ten counties with the most unique disaster declarations historically:<br />
 ![Sheet 6](Images/Sheet6.png)<br /><br />
+This visualization shows which months have the most and least unique disaster declarations historically:<br />
 ![Sheet 9](Images/Sheet9.png)<br /><br />
-## Conclusion:
 
+## Conclusion:
+I went into this project hopeing to analyse the available FEMA dataset and compare disaster declarations, state/county populations, and the overall cost of each declaration.  Unfortunatly I was unable to source the overall disaster cost information. This forced me to narrow the scope of my project, however I was still able to highlight some interesting trends and results focusing on the unique disaster counts per state and county. The unique counts were important, because some disasters had multiple entries due to the size and area affected by the disaster. FEMA assigns a unique disaster code to each disaster but include a row or entry for each different county/designated area affected. Among many other facts, my analysis highlighted that the states of California and Texas have historically suffered the most unique disasters, that fires are the most common disaster incident type, that Michigan has the least disaster declarations per current population, and that November is the month with the fewest disasters historically. I plan to continue this analysis and hope to include more county specific data, as well as potentially adding cost data if the data is actually available. I would also like to pull my data into PowerBI to see what visualization options are avaialable and how it is different from Tableau. Thank you for your time and interest.
 
