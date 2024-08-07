@@ -38,7 +38,12 @@ The SQLite database is updated in the file `database.db`. This file can be opene
 ### Visualizations Link:
 Visualizations Workbook: (https://us-east-1.online.tableau.com/#/site/aaronwmiller863e8871a59c/views/FemaDataWorkbook/Story1?:iid=3)
 
-### Example Visualisations:<br />
+### Example Visualisations:<br /><br />
+![Sheet 1](Images/Sheet1.png)<br /><br />
+![Sheet 3](Images/Sheet3.png)<br /><br />
+![Sheet 5](Images/Sheet5.png)<br /><br />
+![Sheet 6](Images/Sheet6.png)<br /><br />
+![Sheet 9](Images/Sheet9.png)<br /><br />
 ## Conclusion:
 
 
