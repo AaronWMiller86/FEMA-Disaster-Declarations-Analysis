@@ -68,7 +68,7 @@ My project has clear comments in my `main.py` as well as this `README.md`.
 ## Visualizations:
 
 ### Visualizations Link:
-Visualizations Workbook: (https://us-east-1.online.tableau.com/#/site/aaronwmiller863e8871a59c/views/FemaDataWorkbook/Story1?:iid=3)
+Visualizations Workbook: (https://public.tableau.com/views/FemaDataWorkbook/Story1?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 
 ### Example Visualisations:<br /><br />
 This visualization shows the total number of unique disaster declarations per state:<br />
