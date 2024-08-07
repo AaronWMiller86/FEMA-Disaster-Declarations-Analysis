@@ -7,14 +7,16 @@
     <MapboxVectorStylesAndLayers />
     <_.fcp.MarkAnimation.true...MarkAnimation />
     <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelExtractV2.true...ObjectModelExtractV2 />
     <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
     <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
     <SetMembershipControl />
     <SheetIdentifierTracking />
     <SortTagCleanup />
+    <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
     <WindowsPersistSimpleIdentifiers />
   </document-format-change-manifest>
-  <repository-location id='FemaDataWorkbook' path='/t/aaronwmiller863e8871a59c/workbooks' revision='1.0' site='aaronwmiller863e8871a59c' />
+  <repository-location id='FemaDataWorkbook' path='/t/aaronwmiller863e8871a59c/workbooks' revision='1.1' site='aaronwmiller863e8871a59c' />
   <preferences>
     <preference name='ui.encoding.shelf.height' value='24' />
     <preference name='ui.shelf.height' value='26' />
@@ -26,10 +28,11 @@
   </_.fcp.AnimationOnByDefault.false...style>
   <datasources>
     <datasource caption='Disaster Declarations+ (C:\Users\slimi\code\FEMA Disaster Declarations Analysis\database.db)' inline='true' name='federated.1srkrtx0x2qjne16c6bem1pc0spx' version='18.1'>
+      <repository-location id='DisasterDeclarationsCUsersslimicodeFEMADisasterDeclarationsAnalysisdatabase_db' path='datasources' revision='1.0' />
       <connection class='federated'>
         <named-connections>
           <named-connection caption='Devart ODBC Driver for SQLite (ODBC)' name='genericodbc.0iysoh51nt5znq1a1xean0etwgzk'>
-            <connection class='genericodbc' dbname='C:\Users\slimi\code\FEMA Disaster Declarations Analysis\database.db' odbc-connect-string-extras='' odbc-dbms-name='SQLite' odbc-driver='Devart ODBC Driver for SQLite' odbc-dsn='' odbc-suppress-connection-pooling='' odbc-use-connection-pooling='' port='' server='' username='' workgroup-auth-mode='prompt'>
+            <connection class='genericodbc' dbname='C:\Users\slimi\code\FEMA Disaster Declarations Analysis\database.db' odbc-connect-string-extras='' odbc-dbms-name='SQLite' odbc-driver='Devart ODBC Driver for SQLite' odbc-dsn='' odbc-native-protocol='yes' odbc-suppress-connection-pooling='' odbc-use-connection-pooling='' port='' server='' username='' workgroup-auth-mode='as-is'>
               <connection-customization class='genericodbc' enabled='false' version='18.1'>
                 <vendor name='SQLite' />
                 <driver name='Devart ODBC Driver for SQLite' />
@@ -74,7 +77,7 @@
                   <customization name='CAP_QUERY_FROM_REQUIRES_ALIAS' value='no' />
                   <customization name='CAP_QUERY_GROUP_ALLOW_DUPLICATES' value='yes' />
                   <customization name='CAP_QUERY_GROUP_BY_ALIAS' value='no' />
-                  <customization name='CAP_QUERY_GROUP_BY_DEGREE' value='yes' />
+                  <customization name='CAP_QUERY_GROUP_BY_DEGREE' value='no' />
                   <customization name='CAP_QUERY_HAVING_REQUIRES_GROUP_BY' value='no' />
                   <customization name='CAP_QUERY_HAVING_UNSUPPORTED' value='no' />
                   <customization name='CAP_QUERY_JOIN_ACROSS_SCHEMAS' value='no' />
@@ -82,16 +85,16 @@
                   <customization name='CAP_QUERY_NULL_REQUIRES_CAST' value='no' />
                   <customization name='CAP_QUERY_SELECT_ALIASES_SORTED' value='yes' />
                   <customization name='CAP_QUERY_SORT_BY_DEGREE' value='yes' />
-                  <customization name='CAP_QUERY_SUBQUERIES' value='yes' />
+                  <customization name='CAP_QUERY_SUBQUERIES' value='no' />
                   <customization name='CAP_QUERY_SUBQUERIES_WITH_TOP' value='yes' />
                   <customization name='CAP_QUERY_SUBQUERY_QUERY_CONTEXT' value='yes' />
-                  <customization name='CAP_QUERY_TOPSTYLE_LIMIT' value='yes' />
+                  <customization name='CAP_QUERY_TOPSTYLE_LIMIT' value='no' />
                   <customization name='CAP_QUERY_TOPSTYLE_ROWNUM' value='no' />
                   <customization name='CAP_QUERY_TOPSTYLE_TOP' value='no' />
                   <customization name='CAP_QUERY_TOP_0_METADATA' value='no' />
                   <customization name='CAP_QUERY_TOP_N' value='yes' />
                   <customization name='CAP_QUERY_WHERE_FALSE_METADATA' value='no' />
-                  <customization name='CAP_SELECT_INTO' value='no' />
+                  <customization name='CAP_SELECT_INTO' value='yes' />
                   <customization name='CAP_SELECT_TOP_INTO' value='yes' />
                   <customization name='CAP_SET_ISOLATION_LEVEL_VIA_ODBC_API' value='no' />
                   <customization name='CAP_SET_ISOLATION_LEVEL_VIA_SQL' value='no' />
@@ -706,6 +709,376 @@
       <column-instance column='[Calculation_1804254646313549827]' derivation='None' name='[none:Calculation_1804254646313549827:nk]' pivot='key' type='nominal' />
       <column-instance column='[Designated Area]' derivation='None' name='[none:Designated Area:nk]' pivot='key' type='nominal' />
       <column-instance column='[Incident Type]' derivation='None' name='[none:Incident Type:nk]' pivot='key' type='nominal' />
+      <extract _.fcp.ObjectModelExtractV2.true...object-id='' _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='C:/Users/slimi/code/FEMA Disaster Declarations Analysis/Disaster Declarations+ (CUsersslimicodeFEMA Disaster Declarations Analysisdatabase.db).hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='' username='tableau_internal_user'>
+          <_.fcp.ObjectModelEncapsulateLegacy.false...relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <_.fcp.ObjectModelEncapsulateLegacy.true...relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <cols>
+            <map key='[1960]' value='[Extract].[1960]' />
+            <map key='[1970]' value='[Extract].[1970]' />
+            <map key='[1980]' value='[Extract].[1980]' />
+            <map key='[1990]' value='[Extract].[1990]' />
+            <map key='[2000]' value='[Extract].[2000]' />
+            <map key='[2010]' value='[Extract].[2010]' />
+            <map key='[2020]' value='[Extract].[2020]' />
+            <map key='[Abbr]' value='[Extract].[Abbr]' />
+            <map key='[Begin Date]' value='[Extract].[Begin Date]' />
+            <map key='[Close Out Date]' value='[Extract].[Close Out Date]' />
+            <map key='[County Code (County List)]' value='[Extract].[County Code]' />
+            <map key='[County Code]' value='[Extract].[County Code1]' />
+            <map key='[County Name]' value='[Extract].[County Name]' />
+            <map key='[Declaration Date]' value='[Extract].[Declaration Date]' />
+            <map key='[Declaration Title]' value='[Extract].[Declaration Title]' />
+            <map key='[Declaration Type]' value='[Extract].[Declaration Type]' />
+            <map key='[Designated Area]' value='[Extract].[Designated Area]' />
+            <map key='[Disaster ID]' value='[Extract].[Disaster ID]' />
+            <map key='[End Date]' value='[Extract].[End Date]' />
+            <map key='[Incident Type]' value='[Extract].[Incident Type]' />
+            <map key='[State (County List)]' value='[Extract].[State]' />
+            <map key='[State (State Population)]' value='[Extract].[State1]' />
+            <map key='[State Code (County List)]' value='[Extract].[State Code]' />
+            <map key='[State Code]' value='[Extract].[State Code1]' />
+            <map key='[State]' value='[Extract].[State2]' />
+          </cols>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>Disaster ID</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Disaster ID]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Disaster ID</remote-alias>
+              <ordinal>0</ordinal>
+              <family>Disaster Declarations</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>5695</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>State2</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[State]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>State2</remote-alias>
+              <ordinal>1</ordinal>
+              <family>Disaster Declarations</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>71</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Declaration Type</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Declaration Type]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Declaration Type</remote-alias>
+              <ordinal>2</ordinal>
+              <family>Disaster Declarations</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Declaration Date</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[Declaration Date]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Declaration Date</remote-alias>
+              <ordinal>3</ordinal>
+              <family>Disaster Declarations</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>4026</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Incident Type</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Incident Type]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Incident Type</remote-alias>
+              <ordinal>4</ordinal>
+              <family>Disaster Declarations</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>22</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Declaration Title</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Declaration Title]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Declaration Title</remote-alias>
+              <ordinal>5</ordinal>
+              <family>Disaster Declarations</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1507</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Begin Date</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[Begin Date]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Begin Date</remote-alias>
+              <ordinal>6</ordinal>
+              <family>Disaster Declarations</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>3430</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>End Date</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[End Date]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>End Date</remote-alias>
+              <ordinal>7</ordinal>
+              <family>Disaster Declarations</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>3801</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Close Out Date</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[Close Out Date]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Close Out Date</remote-alias>
+              <ordinal>8</ordinal>
+              <family>Disaster Declarations</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>2688</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>State Code1</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[State Code]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>State Code1</remote-alias>
+              <ordinal>9</ordinal>
+              <family>Disaster Declarations</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>71</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>County Code1</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[County Code]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>County Code1</remote-alias>
+              <ordinal>10</ordinal>
+              <family>Disaster Declarations</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>588</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Designated Area</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Designated Area]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Designated Area</remote-alias>
+              <ordinal>11</ordinal>
+              <family>Disaster Declarations</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>4550</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>State1</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[State (State Population)]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>State1</remote-alias>
+              <ordinal>12</ordinal>
+              <family>State Population</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>71</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Abbr</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Abbr]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Abbr</remote-alias>
+              <ordinal>13</ordinal>
+              <family>State Population</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>71</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>1960</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[1960]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>1960</remote-alias>
+              <ordinal>14</ordinal>
+              <family>State Population</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>71</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>1970</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[1970]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>1970</remote-alias>
+              <ordinal>15</ordinal>
+              <family>State Population</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>71</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>1980</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[1980]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>1980</remote-alias>
+              <ordinal>16</ordinal>
+              <family>State Population</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>71</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>1990</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[1990]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>1990</remote-alias>
+              <ordinal>17</ordinal>
+              <family>State Population</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>71</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>2000</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[2000]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>2000</remote-alias>
+              <ordinal>18</ordinal>
+              <family>State Population</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>71</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>2010</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[2010]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>2010</remote-alias>
+              <ordinal>19</ordinal>
+              <family>State Population</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>71</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>2020</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[2020]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>2020</remote-alias>
+              <ordinal>20</ordinal>
+              <family>State Population</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>71</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>State</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[State (County List)]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>State</remote-alias>
+              <ordinal>21</ordinal>
+              <family>County List</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>71</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>State Code</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[State Code (County List)]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>State Code</remote-alias>
+              <ordinal>22</ordinal>
+              <family>County List</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>71</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>County Code</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[County Code (County List)]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>County Code</remote-alias>
+              <ordinal>23</ordinal>
+              <family>County List</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>588</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>County Name</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[County Name]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>County Name</remote-alias>
+              <ordinal>24</ordinal>
+              <family>County List</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>4254</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
       <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' rowDisplayCount='1000' show-structure='true' />
       <style>
         <style-rule element='mark'>
@@ -14192,6 +14565,9 @@
                 <relation connection='genericodbc.0iysoh51nt5znq1a1xean0etwgzk' name='County List' table='[County List]' type='table' />
               </relation>
             </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
           </object>
         </objects>
       </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
@@ -14890,7 +15266,7 @@
             <zone h='3423' id='3' type-v2='title' w='98426' x='787' y='830' />
             <zone h='10477' id='4' is-fixed='true' paired-zone-id='5' removable='false' type-v2='flipboard-nav' w='98426' x='787' y='4253' />
             <zone h='84440' id='5' paired-zone-id='4' removable='false' type-v2='flipboard' w='98426' x='787' y='14730'>
-              <flipboard active-id='10' nav-type='caption' show-nav-arrows='true'>
+              <flipboard active-id='1' nav-type='caption' show-nav-arrows='true'>
                 <story-points>
                   <story-point caption='What States have had the most unique disaster declarations?' captured-sheet='Sheet 1' id='1'>
                     <capturedDeltas>
@@ -14940,9 +15316,9 @@
     </dashboard>
   </dashboards>
   <windows source-height='30'>
-    <window class='dashboard' maximized='true' name='Story 1'>
+    <window class='dashboard' name='Story 1'>
       <viewpoints />
-      <active id='-1' />
+      <active id='5' />
       <simple-id uuid='{3B0756ED-7019-4C8B-A4C0-5DF708323328}' />
     </window>
     <window class='worksheet' name='Sheet 1'>
@@ -15060,7 +15436,7 @@
       </cards>
       <simple-id uuid='{2DD95505-B85E-4E34-ACC0-56C09E80173D}' />
     </window>
-    <window class='worksheet' name='Sheet 5'>
+    <window class='worksheet' maximized='true' name='Sheet 5'>
       <cards>
         <edge name='left'>
           <strip size='160'>

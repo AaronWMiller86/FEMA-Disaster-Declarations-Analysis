@@ -26,7 +26,7 @@ def api_paging_loop():
     return result
 """
 
-# Function to call the FEMA API, convert the calls into dataframes and concat the dataframes into one
+# Function to call the FEMA API, convert the calls into dataframes and concats the dataframes into one
 def fema_api_call():
 
     # The 'top' signifies the total rows per call (max 10,000) and the 'skip' jumps to the next uncalled row
