@@ -15125,8 +15125,8 @@
         </view>
         <style>
           <style-rule element='axis'>
-            <encoding attr='space' class='0' field='[federated.1srkrtx0x2qjne16c6bem1pc0spx].[Longitude (generated)]' field-type='quantitative' max='38324936.779044196' min='20616638.301771306' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
-            <encoding attr='space' class='0' field='[federated.1srkrtx0x2qjne16c6bem1pc0spx].[Latitude (generated)]' field-type='quantitative' max='7185519.2518785028' min='237237.38242739253' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+            <encoding attr='space' class='0' field='[federated.1srkrtx0x2qjne16c6bem1pc0spx].[Longitude (generated)]' field-type='quantitative' max='38406529.15652898' min='20519359.85171536' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.1srkrtx0x2qjne16c6bem1pc0spx].[Latitude (generated)]' field-type='quantitative' max='7224145.4292655168' min='205679.23749964312' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
           </style-rule>
           <style-rule element='mark'>
             <encoding attr='color' field='[federated.1srkrtx0x2qjne16c6bem1pc0spx].[usr:Calculation_2220274662395957251:qk]' num-steps='22' palette='blue_10_0' reverse='true' type='interpolated' />
@@ -15380,7 +15380,7 @@
       </cards>
       <simple-id uuid='{A1BAEBF8-D306-493B-8C6E-EE6330CDFC47}' />
     </window>
-    <window class='worksheet' name='Sheet 3'>
+    <window class='worksheet' maximized='true' name='Sheet 3'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -15436,7 +15436,7 @@
       </cards>
       <simple-id uuid='{2DD95505-B85E-4E34-ACC0-56C09E80173D}' />
     </window>
-    <window class='worksheet' maximized='true' name='Sheet 5'>
+    <window class='worksheet' name='Sheet 5'>
       <cards>
         <edge name='left'>
           <strip size='160'>
