@@ -38,10 +38,13 @@ The SQLite database is updated in the file `database.db`. This file can be opene
 ### Visualizations Link:
 Visualizations Workbook: (https://us-east-1.online.tableau.com/#/site/aaronwmiller863e8871a59c/views/FemaDataWorkbook/Story1?:iid=3)
 
-### Example Visualisations:
-! [TEST] (\Sheet 1.png)
-! [Test2] (FEMA Disaster Declarations Analysis\Sheet 3.png)
-! [Test3] (C:\Users\slimi\code\FEMA Disaster Declarations Analysis\Sheet 5.png)
+### Example Visualisations:<br />
+![Sheet 1](Images/Sheet%201.png)<br />
+![Sheet 3](Images/Sheet%203.png)<br />
+![Sheet 5](Images/Sheet%205.png)<br />
+![Sheet 6](Images/Sheet%206.png)<br />
+![Sheet 9](Images/Sheet%209.png)<br />
+
 ## Conclusion:
 
 
