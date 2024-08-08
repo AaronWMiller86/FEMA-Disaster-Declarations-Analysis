@@ -1,90 +1,107 @@
 # FEMA Disaster Declarations Analysis
 
-## Introduction:
-This project utilizes the openFEMA dataset provided by fema.gov to analyse disaster trends in the United States. The dataset was pulled using the Disaster Declarations Summaries API. I have included a custom made CSV file pulled from wikipedia that details State population trends from 1960 to 2020, and a County Codes text file that contains every county in the US and their corresponding State and County codes. These files are called, cleaned, merged, and converted to SQL in the `main.py` python script. I then imported the created SQL database into Tableau to visualize the data. The data was imported into Tableau using the `Devart ODBC Driver` for `SQLite`.
+## Introduction
 
-## Setup:
-### Virtual Environment (VENV) Setup:
-Venv (for Python 3) allows you to manage separate package installations for different projects. It creates a “virtual” isolated Python installation. When you switch projects, you can create a new virtual environment which is isolated from other virtual environments. You benefit from the virtual environment since packages can be installed confidently and will not interfere with another project’s environment.
+This project analyzes disaster trends in the United States using the openFEMA dataset, which is accessed through the Disaster Declarations Summaries API provided by [FEMA.gov](https://www.fema.gov).
 
-To create a virtual environment, go to your project’s directory and run the following command. This will create a new virtual environment in a local folder named `.venv`:<br />
-&emsp;Windows: `python -m venv venv`.<br />
-&emsp;MacOS/Unix: `python3 -m venv venv`.<br />
-The second argument is the location to create the virtual environment. Generally, you can just create this in your project and call it .venv.
+### Key Files
+- A custom CSV file sourced from [Wikipedia](https://www.wikipedia.org), detailing state population trends from 1960 to 2020.
+- A County Codes text file listing every U.S. county along with its corresponding state and county codes.
 
-### Virtual Environment Activation:
-Activating a virtual environment will put the virtual environment-specific `python` and `pip` executables into your shell’s `PATH`.<br />
-&emsp;Windows: `venv\Scripts\activate`.<br />
-&emsp;MacOS/Unix: `source venv/bin/activate`.
+These files are processed in the `main.py` script, where they are cleaned, merged, and converted into a SQL database. The resulting SQL database is then imported into Tableau for data visualization, using the [Devart ODBC Driver for SQLite](https://www.devart.com/odbc/sqlite/).
 
-### Deactivate a virtual environment:
-If you want to switch projects or leave your virtual environment, deactivate the environment: `deactivate`.
+# Setup
 
-### Install packages using pip:
-When your virtual environment is activated, you can install packages. Use the `pip install` command to install packages.
+### Virtual Environment (VENV) Setup
 
-### Installing dependecies in requirments.txt:<br />
-&emsp;Windows: `python -m pip install -r requirements.txt`<br />
-&emsp;MacOS/Unix: `python3 -m pip install -r requirements.txt`
+A virtual environment (venv) allows you to manage separate package installations for different projects, creating an isolated Python environment for each project. This ensures that packages installed for one project do not interfere with those in another.
 
-## How to Run:
-### Step 1:
-Running the script is simple once all of the dependencies have been installed. Simply run the python file `main.py` in your python ready IDE of choice (VSCode, Pycharm, etc.) and the script will call the `DisasterDeclarationsSummaries` API from fema.gov. The script also pulls data from `county_codes.txt` and `StateCensusData.csv`. It then combines all three into a SQLite database using `pandas` dataframes and `SQLAlchemy` python library.
+To create a virtual environment, navigate to your project’s directory and run the following command:
 
-### Step 2:
-The SQLite database is updated in the file `database.db`. This file can be opened in SQLite or any other SQL program that supports the .db file type.
+- **Windows**: `python -m venv .venv`
+- **MacOS/Unix**: `python3 -m venv .venv`
 
-## Features List:
+The command will create a virtual environment in a local folder named `.venv`.
 
-### Loading Data:
-> Read TWO data files (JSON, CSV, Excel, etc.).
+### Activating the Virtual Environment
 
-My project reads an API call (JSON), a .csv, and a .txt file.
+Activating the virtual environment sets the environment-specific `python` and `pip` executables into your shell’s `PATH`.
 
-> Set up a local database and read data in with SQLite or SQLAlchemy.
+- **Windows**: `.\.venv\Scripts\activate`
+- **MacOS/Unix**: `source .venv/bin/activate`
 
-My project uses SQLAlchemy to create a local database.
+### Deactivating the Virtual Environment
 
-### Clean and operate on the data while combining them:
-> If you’re using text data, get some information from your separate documents and summarize them in a DataFrame.
+To deactivate the virtual environment and return to the global Python environment, run: `deactivate`
 
-My project merges an API call and a .csv using Pandas DataFrames then prints a summary.
+### Installing Packages with `pip`
 
-### Visualize / Present your data:
-> Make a Tableau dashboard to display your data.
+Once your virtual environment is activated, you can install packages using `pip`. To install the dependencies listed in `requirements.txt`, use the following commands:
 
-My project utilizes Tableau to create a dashboard with visualizations. The link is included below in the Visualizations section.
+- **Windows**: `python -m pip install -r requirements.txt`
+- **MacOS/Unix**: `python3 -m pip install -r requirements.txt`
 
-### Best practices: Enhance your project to a higher tier that will impress employers and help other programmers understand your project: 
-> Utilize a virtual environment and include instructions in your README on how the user should set one up.
+## How to Run
 
-My project includes a venv (virtual enviornment) with the instructions on how to create and activate the venv above in the setup section.
+### Step 1
 
-### Interpretation of your data:
-> Annotate your .py files with well-written comments and a clear README.md (only applicable if you’re not using a jupyter notebook).
+Running the script is straightforward once all dependencies are installed. Open the `main.py` file in your preferred Python IDE (e.g., VSCode, PyCharm) and run the script. This will call the `DisasterDeclarationsSummaries` API from FEMA.gov and pull data from `county_codes.txt` and `StateCensusData.csv`. The script combines all three sources into a SQLite database using `pandas` dataframes and the `SQLAlchemy` library.
 
-My project has clear comments in my `main.py` as well as this `README.md`.
+### Step 2
 
-## Visualizations:
+The SQLite database is updated in the file `database.db`. This file can be opened in SQLite or any other SQL program that supports the `.db` file type.
 
-### Visualizations Link:
-Visualizations Workbook: (https://public.tableau.com/views/FemaDataWorkbook/Story1?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+## Features
 
-### Example Visualisations:<br /><br />
-This visualization shows the total number of unique disaster declarations per state:<br />
-![Sheet 1](Images/Sheet1.png)<br /><br />
-This visualization shows the total number of unique disaster declarations per incident type:<br />
-![Sheet 3](Images/Sheet3.png)<br /><br />
-This visualization shows the total number of unique disaster declarations per year over time: <br />
-![Sheet 5](Images/Sheet5.png)<br /><br />
-This visualization shows the top ten counties with the most unique disaster declarations historically:<br />
-![Sheet 6](Images/Sheet6.png)<br /><br />
-This visualization shows which months have the most and least unique disaster declarations historically:<br />
-![Sheet 9](Images/Sheet9.png)<br /><br />
+### Loading Data
 
-## Conclusion:
-I went into this project hoping to analyse the available FEMA dataset and compare disaster declarations, state/county populations, and the overall cost of each declaration.  Unfortunatly I was unable to source the overall disaster cost information. This forced me to narrow the scope of my project, however, I was still able to highlight some interesting trends and results focusing on the unique disaster counts per state and county. The unique counts were important, because some disasters had multiple entries due to the size and area affected by the disaster. FEMA assigns a unique disaster code to each disaster but include a row or entry for each different county/designated area affected. Among many other facts, my analysis highlighted that the states of California and Texas have historically suffered the most unique disasters, that fires are the most common disaster incident type, that Michigan has the least disaster declarations per current population, and that November is the month with the fewest disasters historically. I plan to continue this analysis and hope to include more county specific data, as well as potentially adding cost data if the data is actually available. I would also like to pull my data into PowerBI to see what visualization options are avaialable and how it is different from Tableau. Thank you for your time and interest.
+- **Read multiple data files**: My project reads an API call (JSON), a CSV file, and a text file.
+- **Set up a local database**: My project uses SQLAlchemy to create a local database.
 
-## Contributors:
-Aaron Miller - aaronwmiller86@gmail.com
+### Data Cleaning and Operation
+
+- **Combine and summarize data**: My project merges API data and a CSV file using Pandas DataFrames and prints a summary.
+
+### Data Visualization
+
+- **Create a Tableau dashboard**: My project uses Tableau to create a dashboard with visualizations. The link is provided in the Visualizations section below.
+
+### Best Practices
+
+- **Use a virtual environment**: My project includes a virtual environment with instructions on how to create and activate it, as detailed in the setup section.
+
+### Data Interpretation
+
+- **Annotate and document**: My project includes clear comments in `main.py` and a detailed `README.md`.
+
+## Visualizations
+
+### Visualizations Link
+
+[Visualizations Workbook](https://public.tableau.com/views/FemaDataWorkbook/Story1?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+
+### Example Visualizations
+
+- **Total number of unique disaster declarations per state**:  
+  ![Sheet 1](Images/Sheet1.png)
+
+- **Total number of unique disaster declarations per incident type**:  
+  ![Sheet 3](Images/Sheet3.png)
+
+- **Total number of unique disaster declarations per year over time**:  
+  ![Sheet 5](Images/Sheet5.png)
+
+- **Top ten counties with the most unique disaster declarations historically**:  
+  ![Sheet 6](Images/Sheet6.png)
+
+- **Months with the most and least unique disaster declarations historically**:  
+  ![Sheet 9](Images/Sheet9.png)
+
+## Conclusion
+
+This project aimed to analyze the available FEMA dataset and compare disaster declarations with state and county populations. Although I was unable to source overall disaster cost information, I focused on unique disaster counts per state and county. The analysis revealed several interesting trends, such as California and Texas historically suffering the most unique disasters, fires being the most common disaster type, Michigan having the fewest disaster declarations per current population, and November being the month with the fewest disasters historically. Future plans include extending the analysis with more county-specific data and potentially incorporating cost data if available. I also intend to explore PowerBI to compare visualization options with Tableau. Thank you for your time and interest.
+
+## Contributors
+
+Aaron Miller - [aaronwmiller86@gmail.com](mailto:aaronwmiller86@gmail.com)
 
