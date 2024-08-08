@@ -1,7 +1,7 @@
 # FEMA Disaster Declarations Analysis
 
 ## Introduction:
-This project utilizes the openFEMA dataset provided by fema.gov to analyse disaster trends in the United States. The dataset was pulled using the Disaster Declarations Summaries API. I have included a custom made CSV file pulled from wikipedia that details State population trends from 1960 to 2020, and a County Codes text file that contains every county in the US and their corresponding State and County codes. These files are called, cleaned, merged, and converted to SQL in the `main.py` python script. I then imported the created SQL database into Tableau to visualize the data.
+This project utilizes the openFEMA dataset provided by fema.gov to analyse disaster trends in the United States. The dataset was pulled using the Disaster Declarations Summaries API. I have included a custom made CSV file pulled from wikipedia that details State population trends from 1960 to 2020, and a County Codes text file that contains every county in the US and their corresponding State and County codes. These files are called, cleaned, merged, and converted to SQL in the `main.py` python script. I then imported the created SQL database into Tableau to visualize the data. The data was imported into Tableau using the `Devart ODBC Driver` for `SQLite`.
 
 ## Setup:
 ### Virtual Environment (VENV) Setup:
@@ -29,7 +29,7 @@ When your virtual environment is activated, you can install packages. Use the `p
 
 ## How to Run:
 ### Step 1:
-Running the script is simple once all of the dependencies have been installed. Simply run the python file `main.py` and the script will call the `DisasterDeclarationsSummaries` API from fema.gov. The script also pulls data from `county_codes.txt` and `StateCensusData.csv`. It then combines all three into a SQLite database using `pandas` dataframes and `SQLAlchemy`.
+Running the script is simple once all of the dependencies have been installed. Simply run the python file `main.py` in your python ready IDE of choice (VSCode, Pycharm, etc.) and the script will call the `DisasterDeclarationsSummaries` API from fema.gov. The script also pulls data from `county_codes.txt` and `StateCensusData.csv`. It then combines all three into a SQLite database using `pandas` dataframes and `SQLAlchemy` python library.
 
 ### Step 2:
 The SQLite database is updated in the file `database.db`. This file can be opened in SQLite or any other SQL program that supports the .db file type.
@@ -83,5 +83,8 @@ This visualization shows which months have the most and least unique disaster de
 ![Sheet 9](Images/Sheet9.png)<br /><br />
 
 ## Conclusion:
-I went into this project hopeing to analyse the available FEMA dataset and compare disaster declarations, state/county populations, and the overall cost of each declaration.  Unfortunatly I was unable to source the overall disaster cost information. This forced me to narrow the scope of my project, however, I was still able to highlight some interesting trends and results focusing on the unique disaster counts per state and county. The unique counts were important, because some disasters had multiple entries due to the size and area affected by the disaster. FEMA assigns a unique disaster code to each disaster but include a row or entry for each different county/designated area affected. Among many other facts, my analysis highlighted that the states of California and Texas have historically suffered the most unique disasters, that fires are the most common disaster incident type, that Michigan has the least disaster declarations per current population, and that November is the month with the fewest disasters historically. I plan to continue this analysis and hope to include more county specific data, as well as potentially adding cost data if the data is actually available. I would also like to pull my data into PowerBI to see what visualization options are avaialable and how it is different from Tableau. Thank you for your time and interest.
+I went into this project hoping to analyse the available FEMA dataset and compare disaster declarations, state/county populations, and the overall cost of each declaration.  Unfortunatly I was unable to source the overall disaster cost information. This forced me to narrow the scope of my project, however, I was still able to highlight some interesting trends and results focusing on the unique disaster counts per state and county. The unique counts were important, because some disasters had multiple entries due to the size and area affected by the disaster. FEMA assigns a unique disaster code to each disaster but include a row or entry for each different county/designated area affected. Among many other facts, my analysis highlighted that the states of California and Texas have historically suffered the most unique disasters, that fires are the most common disaster incident type, that Michigan has the least disaster declarations per current population, and that November is the month with the fewest disasters historically. I plan to continue this analysis and hope to include more county specific data, as well as potentially adding cost data if the data is actually available. I would also like to pull my data into PowerBI to see what visualization options are avaialable and how it is different from Tableau. Thank you for your time and interest.
+
+## Contributors:
+Aaron Miller - aaronwmiller86@gmail.com
 
