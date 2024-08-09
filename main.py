@@ -18,7 +18,7 @@ def api_paging_loop():
     top = 10000
     calls = (int(row_count) / top) + 1
     i = 0
-    while(skip < calls):
+    while(i < calls):
         loop_url = fema_api_url + '&$inlinecount=allpages&$skip=' + str(skip) + "&$top=" + str(top)
         result = pd.concat([pd.json_normalize(requests.get(loop_url).json(), 'DisasterDeclarationsSummaries')])
         i += 1
